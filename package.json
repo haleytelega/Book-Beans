@@ -1,0 +1,22 @@
+{
+  "name": "bookandbeans",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haleytelega/Book-Beans.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haleytelega/Book-Beans/issues"
+  },
+  "homepage": "https://github.com/haleytelega/Book-Beans#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
