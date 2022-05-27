@@ -24,7 +24,26 @@ Book.init(
             validate: {
                 len: [1]
             }
-        }
+        },
+         meeting_weekday: {
+             type: DataTypes.STRING,
+             allowNull:false,
+             validate: {
+                 len: [1]
+             }
+         },
+         meeting_time: {
+             type: DataTypes.INTEGER,
+             allowNull: false,
+         },
+          user_id: {
+              type: DataTypes.INTEGER,
+              references: {
+                  model: 'user',
+                  key: 'id'
+              }
+          }
+        
         },
         {
             sequelize,

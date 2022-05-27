@@ -17,8 +17,16 @@ CoffeeComment.init(
         validate: {
         len: [1]
         }
-    }
     },
+    coffee_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'coffee',
+            key: 'id'
+        }
+    }
+},  
+
     {
     sequelize,
     freezeTableName: true,
