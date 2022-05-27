@@ -44,4 +44,24 @@ router.put('/:id', (req, res) => {
     });
 });
 
+router.delete('/:id', (req, res) => {
+    // delete on tag by its `id` value
+    Coffee.destroy({
+        where: {
+            id: req.params.id
+    }
+    })
+    .then(dbCoffeeData => {
+        if (!dbCoffeeData) {
+            res.status(404).json({ message: 'No tag found with this id' });
+            return;
+    }
+        res.json(dbCoffeeData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports = router;
