@@ -22,4 +22,4 @@ async function newFormHandlerCafe(event) {
     }
   }
   
-  document.querySelector('#new-post-form').addEventListener('submit', newFormHandlerCafe);
+  document.querySelector('#new-cafe-form').addEventListener('submit', newFormHandlerCafe);
