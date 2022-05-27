@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Coffee extends Model {}
+class Book extends Model {}
 
-Coffee.init(
+Book.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,7 +11,7 @@ Coffee.init(
             primaryKey: true,
             autoIncrement: true
         },
-        cafe_name:{
+        bookClub_name:{
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -25,20 +25,32 @@ Coffee.init(
                 len: [1]
             }
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        }
+         meeting_weekday: {
+             type: DataTypes.STRING,
+             allowNull:false,
+             validate: {
+                 len: [1]
+             }
+         },
+         meeting_time: {
+             type: DataTypes.INTEGER,
+             allowNull: false,
+         },
+          user_id: {
+              type: DataTypes.INTEGER,
+              references: {
+                  model: 'user',
+                  key: 'id'
+              }
+          }
+        
         },
         {
             sequelize,
             freezeTableName: true,
             underscored: true,
-            modelName: 'coffee'
+            modelName: 'book'
         }
 );
 
-module.exports = Coffee;
+module.exports = Book;
