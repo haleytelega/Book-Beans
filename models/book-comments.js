@@ -18,13 +18,21 @@ bookComment.init(
         len: [1]
         }
     },
-    //not sure what to do for linking id
+
     book_id: {
-
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'book',
+            key: 'id'
+        }
     },
-    //help here too
-    user_id: {
 
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
     }
     },
     {

@@ -36,8 +36,13 @@ Book.init(
              type: DataTypes.INTEGER,
              allowNull: false,
          },
-         // not sure how to do user_id
-          user_id
+          user_id: {
+              type: DataTypes.INTEGER,
+              references: {
+                  model: 'user',
+                  key: 'id'
+              }
+          }
         
         },
         {
