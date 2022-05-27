@@ -12,7 +12,7 @@ bookComment.init(
         autoIncrement: true
     },
     book_text: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
         validate: {
         len: [1]
