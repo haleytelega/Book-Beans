@@ -9,6 +9,6 @@ const BookCommentsRoutes = require('./bookcomments-routes');
 router.use('/coffee', coffeeRoutes);
 router.use('/coffeeComments', coffeeCommentsRoutes)
 router.use('/book', bookRoutes);
-router.use('/bookcomments', BookCommentsRoutes)
+router.use('/bookComments', BookCommentsRoutes)
 
 module.exports = router;
