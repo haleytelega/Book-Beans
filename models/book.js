@@ -24,7 +24,21 @@ Book.init(
             validate: {
                 len: [1]
             }
-        }
+        },
+         meeting_weekday: {
+             type: DataTypes.STRING,
+             allowNull:false,
+             validate: {
+                 len: [1]
+             }
+         },
+         meeting_time: {
+             type: DataTypes.INTEGER,
+             allowNull: false,
+         },
+         // not sure how to do user_id
+          user_id
+        
         },
         {
             sequelize,

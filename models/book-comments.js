@@ -17,6 +17,14 @@ bookComment.init(
         validate: {
         len: [1]
         }
+    },
+    //not sure what to do for linking id
+    book_id: {
+
+    },
+    //help here too
+    user_id: {
+
     }
     },
     {
