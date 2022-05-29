@@ -1,9 +1,14 @@
 const router = require('express').Router();
-const { Coffee } = require('../../models');
+const { Coffee, CoffeeComments } = require('../../models');
 
 router.get('/', (req, res) => {
     Coffee.findAll({
-        attributes: ['id', 'cafe_name', 'city_name']
+        attributes: ['id', 'cafe_name', 'city_name'],
+        include: [{
+            model: CoffeeComments,
+            attributes: ['comment_text']
+        }
+        ]
     })
     .then(dbCoffeeData => res.json(dbCoffeeData))
     .catch(err => {

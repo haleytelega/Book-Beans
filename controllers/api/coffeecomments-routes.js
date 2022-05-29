@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
     CoffeeComments.create({
-        comment_text: req.body.comment_text
+        comment_text: req.body.comment_text,
+        coffee_id: req.body.coffee_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
