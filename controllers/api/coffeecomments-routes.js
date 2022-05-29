@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     CoffeeComments.create({
         comment_text: req.body.comment_text,
-        coffee_id: req.session.coffee_id
+        coffee_id: req.body.coffee_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
