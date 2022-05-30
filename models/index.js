@@ -56,8 +56,5 @@ Book.hasMany(BookComments, {
 });
 
 
-  
-
-
 
 module.exports = { Coffee, CoffeeComments, Book, BookComments, User };
