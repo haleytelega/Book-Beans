@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Coffee, CoffeeComments } = require('../models');
+const { Coffee, CoffeeComments, Book, BookComments  } = require('../models');
 
 router.get('/', (req, res) => {
     Coffee.findAll({
@@ -8,6 +8,29 @@ router.get('/', (req, res) => {
         {
             model: CoffeeComments,
             attributes: ['id', 'comment_text']
+        }
+    })
+    .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+
+        res.render('homepage', {
+            posts,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+router.get('/', (req, res) => {
+    Book.findAll({
+        attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time'],
+        include: 
+        {
+            model: BookComments,
+            attributes: ['id', 'book_text']
         }
     })
     .then(dbPostData => {

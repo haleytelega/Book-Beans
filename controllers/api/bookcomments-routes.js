@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { BookComment } = require('../../models');
+const { BookComments } = require('../../models');
 
 router.get('/', (req, res) => {
-    BookComment.findAll()
+    BookComments.findAll()
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
         console.log(err);
@@ -12,8 +12,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
-    BookComment.create({
-        comment_text: req.body.comment_text
+    BookComments.create({
+        book_text: req.body.book_text,
+        book_id: req.body.book_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
@@ -23,17 +24,17 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    BookComment.destroy({
+    BookComments.destroy({
     where: {
         id: req.params.id
     }
     })
-    .then(dbBookData => {
-        if (!dbBookData) {
+    .then(dbCommentData => {
+        if (!dbCommentData) {
             res.status(404).json({ message: 'No comment found with this id!' });
             return;
         }
-        res.json(dbBookData);
+        res.json(dbCommentData);
     })
     .catch(err => {
         console.log(err);

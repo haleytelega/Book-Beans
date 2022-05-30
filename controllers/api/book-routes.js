@@ -1,8 +1,14 @@
 const router = require('express').Router();
-const { Book } = require('../../models');
+const { Book, BookComments } = require('../../models');
 
 router.get('/', (req, res) => {
-  Book.findAll()
+  Book.findAll({
+    attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time'],
+    include: [{
+      model: BookComments,
+      attributes: ['book_text']
+    }]
+  })
     .then(dbBookData => res.json(dbBookData))
     .catch(err => {
       console.log(err);
@@ -14,9 +20,10 @@ router.post('/', (req, res) => {
 
   if (req.session) {
   Book.create({
-    add_text: req.body.book_text,
-    post_id: req.body.post_id,
-    user_id: req.session.user_id
+    bookClub_name: req.body.bookClub_name,
+    city_name: req.body.city_name,
+    meeting_weekday: req.body.meeting_weekday,
+    meeting_time: req.body.meeting_time
   })
     .then(dbBookData => res.json(dbBookData))
     .catch(err => {
@@ -24,6 +31,38 @@ router.post('/', (req, res) => {
       res.status(400).json(err);
     });
   }
+});
+
+router.post('/', (req, res) => {
+  Coffee.create({
+      cafe_name: req.body.cafe_name,
+      city_name: req.body.city_name
+  })
+  .then(dbCoffeeData => res.json(dbCoffeeData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
+
+router.put('/:id', (req, res) => {
+  Book.update(req.body, {
+      individualHooks: true,
+      where: {
+          id: req.params.id
+      }
+  })
+  .then(dbBookData => {
+      if (!dbBookData[0]) {
+      res.status(404).json({ message: 'No book found with this id' });
+      return;
+  }
+      res.json(dbBookData);
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 router.delete('/:id', (req, res) => {
