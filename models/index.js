@@ -5,7 +5,6 @@ const BookComments = require('./BookComments')
 const User = require('./User')
 
 
-
 User.hasMany(Coffee, {
     foreignKey: 'user_id'
 });
@@ -45,7 +44,7 @@ BookComments.belongsTo(User, {
 });
 
 BookComments.belongsTo(Book, {
-    foreignKey: 'Book_id'
+    foreignKey: 'book_id'
 });
 
 User.hasMany(BookComments, { 
@@ -53,7 +52,7 @@ User.hasMany(BookComments, {
 });
 
 Book.hasMany(BookComments, {
-    foreignKey: 'Book_id'
+    foreignKey: 'book_id'
 });
 
 
