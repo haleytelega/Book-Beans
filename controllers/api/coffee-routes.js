@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Coffee, CoffeeComments } = require('../../models');
+const { Coffee, CoffeeComments, User } = require('../../models');
 
 router.get('/', (req, res) => {
     Coffee.findAll({
@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
         include: [{
             model: CoffeeComments,
             attributes: ['comment_text']
+        },
+        {
+            model: User,
+            attributes: ['username']
         }
         ]
     })
