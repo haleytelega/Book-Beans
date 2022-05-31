@@ -6,9 +6,9 @@ $primary-color: rgb(194,178,128);
 ::selection {
   background-color: $primary-color;
 }
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
 .custom-font {
     font-family: 'Amaranth', sans-serif;

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const handlebars = require('express-handlebars');
 
@@ -15,7 +15,7 @@ app.engine('hbs', handlebars({
 
 app.use(express.static('public')); 
 
-const fakeAPI = () => 'Faker';
+//const fakeAPI = () => 'Faker';
 
 app.get('/', (req, res)=> {
     res.render('main', {layout: 'index',}); // inside brackets add fake api file names filename:  fakeAPI()
