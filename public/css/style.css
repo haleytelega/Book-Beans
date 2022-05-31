@@ -77,12 +77,12 @@
         opacity:1;
       }
       
-    .cancelbtn {
+    .xbtn {
         padding: 14px 20px;
         background-color: #C2B280;
       }
       
-    .cancelbtn, .signupbtn {
+    .xbtn, .signupbtn {
         float: left;
         width: 50%;
       }
@@ -91,7 +91,7 @@
         padding: 16px;
       }
 
-    .clearfix::after {
+    .submit::after {
         content: "";
         clear: both;
         display: table;
