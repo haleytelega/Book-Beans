@@ -7,61 +7,119 @@
 #6F4E37
  */
  box/* entire code */
- * {
+    * {
      box-sizing: border-box;
      padding: 0;
      margin: 0;
      background-color: #EDEADE;
- }
+    }
 
- .header {
+    .header {
      padding: 23px;
      background-color: #6F4E37;
      color: #EADDCA;
- }
+    }
 
- #header {
+    #header {
      display: inline-block;
      font-size: 40px;
      font-family: 'Amaranth', sans-serif;
- }
+    }
 
- .header div {
+    .header div {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-}
+    }
 
-.header div ul {
+    .header div ul {
     list-style-type: none;
-}
+    }
 
-.header div ul li {
+    .header div ul li {
     display: inline-block;
     margin-left: 25px;
-}
+    }
 
-#about-us {
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #EDEADE;
+        }
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #EDEADE;
+        outline: none;
+        }
+      
+    hr {
+        border: 1px solid #EADDCA;
+        margin-bottom: 25px;
+      }
+      
+    button {
+        background-color: #8f8f34;
+        color: #EADDCA;
+        padding: 20px 26px;
+        margin: 12px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      
+    button:hover {
+        opacity:1;
+      }
+      
+    .cancelbtn {
+        padding: 14px 20px;
+        background-color: #C2B280;
+      }
+      
+    .cancelbtn, .signupbtn {
+        float: left;
+        width: 50%;
+      }
+      
+    .container {
+        padding: 16px;
+      }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+    @media screen and (max-width: 300px) {
+        .cancelbtn, .signupbtn {
+          width: 100%;
+        }
+      }
+
+    #about-us {
     background-color: #8f8f34;
     color: #EADDCA;
-}
+    }
 
-#book-clubs {
+    #book-clubs {
     background-color: #8f8f34;
     color: #EADDCA;
-}
+    }
 
-
-#coffee-shops {
+    #coffee-shops {
     background-color: #8f8f34;
     color: #EADDCA;
 }
 
 .footer{
     padding: 23px;
-    font-family: fantasy;
     background-color: #6F4E37;
     color: #EADDCA;
 }
