@@ -43,7 +43,18 @@
     margin-left: 25px;
 }
 
+#about-us {
+    background-color: #8f8f34;
+    color: #EADDCA;
+}
+
 #book-clubs {
+    background-color: #8f8f34;
+    color: #EADDCA;
+}
+
+
+#coffee-shops {
     background-color: #8f8f34;
     color: #EADDCA;
 }
