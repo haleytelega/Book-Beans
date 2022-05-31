@@ -1,10 +1,8 @@
 const router = require('express').Router();
-const { User, Coffee, CoffeeCommits } = require('../../models');
+const { User } = require('../../models');
 
 router.get('/', (req, res) => {
-    User.findAll({
-        attributes: ['id', 'email', 'username', 'password', 'city_name']
-    })
+    User.findAll()
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
         console.log(err);
