@@ -17,8 +17,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-
-  if (req.session) {
   Book.create({
     bookClub_name: req.body.bookClub_name,
     city_name: req.body.city_name,
@@ -31,19 +29,7 @@ router.post('/', (req, res) => {
       res.status(400).json(err);
     });
   }
-});
-
-router.post('/', (req, res) => {
-  Coffee.create({
-      cafe_name: req.body.cafe_name,
-      city_name: req.body.city_name
-  })
-  .then(dbCoffeeData => res.json(dbCoffeeData))
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  });
-});
+);
 
 router.put('/:id', (req, res) => {
   Book.update(req.body, {

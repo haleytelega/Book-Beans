@@ -19,21 +19,21 @@ BookComments.init(
         }
     },
 
-    // book_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'book',
-    //         key: 'id'
-    //     }
-    // },
+    book_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'book',
+            key: 'id'
+        }
+    },
 
-    // user_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'user',
-    //         key: 'id'
-    //     }
-    // }
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
+    }
     },
     {
     sequelize,
