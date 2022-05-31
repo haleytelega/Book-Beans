@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
         include: [{
             model: CoffeeComments,
             attributes: ['comment_text'],
+            include: {
+                model: User,
+                attributes: ['username']
+            }
         },
         {
             model: User,
