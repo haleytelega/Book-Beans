@@ -1,6 +1,6 @@
 const { Coffee } = require('../models');
 
-const postdata = [
+const coffeedata = [
     {
         cafe_name: 'Donec posuerem.',
         city_name: 'Ottawa',
@@ -104,6 +104,6 @@ const postdata = [
   ];
 
 
-const seedPosts = () => Coffee.bulkCreate(postdata);
+const seedCoffeeShops = () => Coffee.bulkCreate(coffeedata);
 
-module.exports = seedPosts;
+module.exports = seedCoffeeShops;
