@@ -14,7 +14,8 @@ router.post('/', (req, res) => {
     // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
     BookComments.create({
         book_text: req.body.book_text,
-        book_id: req.body.book_id
+        book_id: req.body.book_id,
+        user_id: req.body.user_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
