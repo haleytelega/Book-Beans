@@ -43,7 +43,14 @@ User.init(
             validate: {
                 len: [4]
             }
-    }
+        },
+        coffee_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'coffee',
+                key: 'id'
+            }
+        }
         },
         {
             sequelize,
