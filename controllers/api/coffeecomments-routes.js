@@ -1,8 +1,19 @@
 const router = require('express').Router();
-const { CoffeeComments } = require('../../models');
+const { CoffeeComments, Coffee, User } = require('../../models');
 
 router.get('/', (req, res) => {
-    CoffeeComments.findAll()
+    CoffeeComments.findAll({
+        attributes: ['id', 'comment_text'],
+        include: [{
+            model: Coffee,
+            attributes: ['cafe_name']
+        }, 
+        {
+            model: User,
+            attributes: ['username']
+        }
+        ]
+    })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
         console.log(err);
@@ -13,7 +24,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     CoffeeComments.create({
         comment_text: req.body.comment_text,
-        coffee_id: req.body.coffee_id
+        coffee_id: req.body.coffee_id,
+        user_id: req.body.user_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
