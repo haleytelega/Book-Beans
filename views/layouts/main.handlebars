@@ -15,9 +15,9 @@
   <div>
     <header class="row">
       <div class="col-4 mx-auto">
-        <img src="/images/logo.jpeg" alt="Books and Beans logo" class="row text-center">
+        <img src="/images/logo.jpeg" alt="Books and Beans logo" class="row text-center rounded-3 mt-4">
       </div>
-      <nav class="d-flex justify-content-around mt-3">
+      <nav class="d-flex justify-content-around mt-4">
         {{#if loggedIn}}
         <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
         <a href="/book" class="text-dark h3 text-decoration-none">Find a Book Club</a>
@@ -26,16 +26,23 @@
        
         {{else}}
         <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
-        <a href="/login" class="text-dark h3 text-decoration-none">Find a Book Club</a>
-        <a href="/login" class="text-dark h3 text-decoration-none">Find a Cafe</a>
-        <a href="/login" class="text-dark h3 text-decoration-none">Login</a>
-       
+        <a href="/login" class="text-dark h3 text-decoration-none">Add a Book Club</a>
+        <a href="/login" class="text-dark h3 text-decoration-none">Add a Cafe</a>
+        <a href="/login" class="text-dark h3 text-decoration-none">Login</a> 
         {{/if}}
       </nav>
         
     </header>
     <main>
       {{{ body }}}
+      <div style="height: 550px">
+        
+        <a href="/signup" class="text-dark h3 text-decoration-none text-nowrap">Not a member? Sign Up here!
+        <img src="/images/bookcoffee.jpg" class="w-75 h-100">
+        </a>
+      </div>
+      
+
       
     </main>
     <footer>
