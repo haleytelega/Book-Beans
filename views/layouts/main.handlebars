@@ -33,23 +33,22 @@
       </nav>
         
     </header>
+    <hr>
     <main>
       {{{ body }}}
       <div style="height: 550px">
         
-        <a href="/signup" class="text-dark h3 text-decoration-underline text-nowrap">Not a member? Sign Up here!
-        <img src="/images/bookcoffee.jpg" class="w-75 h-100">
+        <a href="/signup" class="text-dark h4 text-decoration-underline text-nowrap">Not a member? Sign Up here!
+        <img src="/images/bookcoffee.jpg" class="w-75 h-100 rounded">
         </a>
-      </div>
-      
-
-      
+      </div>   
+    <hr>   
     </main>
-    <footer>
+    
+  </div>
+    <footer class="mt-4 text-dark h2 text-center">
       Thanks for visiting!
     </footer>
-  </div>
-
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
