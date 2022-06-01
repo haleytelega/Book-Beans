@@ -17,16 +17,19 @@
       <div class="col-4 mx-auto">
         <img src="/images/logo.jpeg" alt="Books and Beans logo" class="row text-center">
       </div>
-      <nav>
-        <h1>
-        <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
-      </h1>
+      <nav class="d-flex justify-content-around mt-3">
         {{#if loggedIn}}
-        <button id="logout" class="text-dark h4">Logout</button>
+        <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
         <a href="/book" class="text-dark h3 text-decoration-none">Find a Book Club</a>
         <a href="/coffee" class="text-dark h3 text-decoration-none">Find a Cafe</a>
+        <button id="logout" class="text-dark h4">Logout</button>
+       
         {{else}}
-        <a href="/login" class="text-dark h5">Login</a>
+        <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
+        <a href="/login" class="text-dark h3 text-decoration-none">Find a Book Club</a>
+        <a href="/login" class="text-dark h3 text-decoration-none">Find a Cafe</a>
+        <a href="/login" class="text-dark h3 text-decoration-none">Login</a>
+       
         {{/if}}
       </nav>
         
