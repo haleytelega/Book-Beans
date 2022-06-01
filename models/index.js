@@ -6,28 +6,34 @@ const User = require('./User')
 
 
 User.hasMany(Coffee, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 Coffee.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 
 CoffeeComments.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 CoffeeComments.belongsTo(Coffee, {
-    foreignKey: 'coffee_id'
+    foreignKey: 'coffee_id',
+    onDelete: 'CASCADE'
 });
 
 User.hasMany(CoffeeComments, { 
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 Coffee.hasMany(CoffeeComments, {
-    foreignKey: 'coffee_id'
+    foreignKey: 'coffee_id',
+    onDelete: 'CASCADE'
 });
 
 
