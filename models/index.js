@@ -52,9 +52,4 @@ Book.hasMany(BookComments, {
     foreignKey: 'book_id'
 });
 
-
-  
-
-
-
 module.exports = { Coffee, CoffeeComments, Book, BookComments, User };
