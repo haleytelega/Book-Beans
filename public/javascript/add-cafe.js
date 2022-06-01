@@ -4,7 +4,7 @@ async function newFormHandlerCafe(event) {
     const cafe_name = document.querySelector('input[name="cafe-name"]').value;
     const city_name = document.querySelector('input[name="city-name"]').value;
   
-    const response = await fetch(`/api/cafes`, {
+    const response = await fetch(`/api/coffeeshops`, {
       method: 'POST',
       body: JSON.stringify({
         cafe_name,
@@ -16,7 +16,7 @@ async function newFormHandlerCafe(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/coffeeshops');
     } else {
       alert(response.statusText);
     }

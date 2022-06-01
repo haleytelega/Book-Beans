@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
 
-        res.render('homepage', {
+        res.render('club&cafe-post', {
             posts,
            // loggedIn: req.session.body
         });
@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
 
-        res.render('homepage', {
+        res.render('club&cafe-post', {
             posts,
             loggedIn: req.session.loggedIn
         });
