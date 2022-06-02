@@ -1,20 +1,15 @@
-{{!-- {{>post-info post}} --}}
+<ol class="coffee-list">
+  {{#each coffeePosts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
-{{/if}}
-
-{{!-- {{> comments post.comments}} --}}
-
-{{#if loggedIn}}
-<script src="/javascript/add-cafe.js"></script>
-<script src="/javascript/add-club.js"></script>
-{{/if}}
+<ol class="book-list">
+  {{#each booksPosts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>

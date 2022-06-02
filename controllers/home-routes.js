@@ -1,44 +1,44 @@
 const router = require('express').Router();
-const { Coffee, CoffeeComments, Book, BookComments  } = require('../models');
+const { Coffee, CoffeeComments, Book, BookComments, User  } = require('../models');
 
 router.get('/', (req, res) => {
     Coffee.findAll({
-        attributes: ['id', 'cafe_name', 'city_name'],
-        include: 
+        attributes: ['id', 'cafe_name', 'city_name', 'user_id', 'created_at'],
+        include: [
         {
             model: CoffeeComments,
             attributes: ['id', 'comment_text']
-        }
-    })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-
-        res.render('homepage', {
-            posts,
-           // loggedIn: req.session.body
-        });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
-router.get('/', (req, res) => {
-    Book.findAll({
-        attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time'],
-        include: 
+        },
         {
-            model: BookComments,
-            attributes: ['id', 'book_text']
+            model: User,
+            attributes: ['username']
         }
+        ]
     })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-
-        res.render('homepage', {
-            posts,
-            loggedIn: req.session.loggedIn
+    .then(dbCoffeeData => {
+        const coffeePosts = dbCoffeeData.map(coffeePost => coffeePost .get({ plain: true }));
+        Book.findAll({
+            attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time', 'created_at'],
+            include: [
+            {
+                model: BookComments,
+                attributes: ['id', 'book_text']
+            }
+        ]
+        })
+        .then(dbBookData => {
+            const booksPosts = dbBookData.map(bookPost => bookPost.get({ plain: true }));
+            const allPosts = {coffeePosts, booksPosts};
+            console.log(allPosts);
+            res.render('club&cafe-post', {
+                coffeePosts,
+                booksPosts
+                // loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
     })
     .catch(err => {
