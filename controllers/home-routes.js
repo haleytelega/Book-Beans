@@ -29,11 +29,11 @@ router.get('/', (req, res) => {
         .then(dbBookData => {
             const booksPosts = dbBookData.map(bookPost => bookPost.get({ plain: true }));
             const allPosts = {coffeePosts, booksPosts};
-            console.log(allPosts);
+            // console.log(allPosts);
             res.render('club&cafe-post', {
                 coffeePosts,
-                booksPosts
-                // loggedIn: req.session.loggedIn
+                booksPosts,
+                loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {
