@@ -1,15 +1,14 @@
 <ol class="coffee-list">
-  {{#each coffeePosts as |post|}}
+  {{#each coffeePosts as |coffeePost|}}
   <li>
-    {{> post-info post }}
+    {{> coffee-info coffeePost }}
   </li>
   {{/each}}
 </ol>
 
 <ol class="book-list">
-  {{#each booksPosts as |post|}}
+  {{#each booksPosts as |bookPost|}}
   <li>
-    {{> post-info post }}
+    {{> book-info bookPost }}
   </li>
   {{/each}}
-</ol>
