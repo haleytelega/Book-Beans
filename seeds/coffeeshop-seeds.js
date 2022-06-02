@@ -101,7 +101,8 @@ const coffeedata = [
         city_name: 'Toronto',
         user_id: 7
     }
-  ];
+];
+
 
 
 const seedCoffeeShops = () => Coffee.bulkCreate(coffeedata);
