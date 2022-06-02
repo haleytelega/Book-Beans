@@ -14,10 +14,12 @@ nav a:hover {
 }
 
 h6 {
-    padding-left: 120px;
+    padding-left: 150px;
 }
 
 a {
     text-decoration: none;
     color: black;
+    cursor: default;
+    pointer-events: none;   
 }

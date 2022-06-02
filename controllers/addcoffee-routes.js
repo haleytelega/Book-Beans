@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Coffee, CoffeeComments, User } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log('req.session',req.session);
     Coffee.findAll({
         where: {
             user_id: req.session.user_id
