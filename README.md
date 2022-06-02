@@ -14,8 +14,8 @@
   - [Questions](#questions)
 
   # Installation
-     A Javascript command-line application which make use several modules from the npm site.
-   Of course if you want to see the results you can follow this [link](https://infinite-cove-67044.herokuapp.com/) where is the live version of the app.
+     A Javascript application which make use several modules from the npm site and deployed with Heroku.
+   Of course if you want to see the results you can follow this [link]() where is the live version of the app.
    In case you want to reproduce and make some changes, I recommend to use the Node.js with the below packages:
    - ```express``` to make a server
    - ```mysql2``` for the database
@@ -38,6 +38,6 @@
     Screenshots:
 
   # Questions
-  If you have any questions, please contact me at [email](mailto:elsartz@gmail.com).
+  If you have any questions, please contact me at [email](mailto:).
   My GitHub username is *elsartz* and ...
   my GitHub profile is [profile](https://github.com/elsartz)
