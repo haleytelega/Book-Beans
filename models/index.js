@@ -35,7 +35,15 @@ Coffee.hasMany(CoffeeComments, {
     onDelete: 'CASCADE'
 });
 
+User.hasMany(Book, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
+Book.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 BookComments.belongsTo(User, {
     foreignKey: 'user_id'
 });
