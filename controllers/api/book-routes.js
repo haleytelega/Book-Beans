@@ -1,13 +1,22 @@
 const router = require('express').Router();
-const { Book, BookComments } = require('../../models');
+const { Book, BookComments, User } = require('../../models');
 
 router.get('/', (req, res) => {
   Book.findAll({
     attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time'],
     include: [{
       model: BookComments,
-      attributes: ['book_text']
-    }]
+      attributes: ['book_text'],
+      include: {
+        model: User,
+        attributes: ['username']
+    }
+},
+{
+    model: User,
+    attributes: ['username']
+}
+]   
   })
     .then(dbBookData => res.json(dbBookData))
     .catch(err => {
