@@ -19,40 +19,30 @@
       </div>
       <nav class="d-flex justify-content-around mt-4">
         {{#if loggedIn}}
-        <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
+        <a href="/" class="text-dark h3 text-decoration-none">Find Books and Beans</a>
         <a href="/book" class="text-dark h3 text-decoration-none">Find a Book Club</a>
         <a href="/coffee" class="text-dark h3 text-decoration-none">Find a Cafe</a>
-<<<<<<< HEAD
-        <button id="logout" class="text-dark h4">Logout</button>
-
-=======
-        <a href="/"  class="text-dark h3 test-decoration-none">Logout</a>
+        <a href="/"  class="text-dark h3 test-decoration-none" id="logout">Logout</a>
        
->>>>>>> feature/BookRoutes
         {{else}}
-        <a href="/" class="text-dark h3 text-decoration-none">Books and Beans</a>
-        <a href="/" class="text-dark h3 text-decoration-none">Add a Book Club</a>
-        <a href="/coffeeshops" class="text-dark h3 text-decoration-none">Add a Cafe</a>
-        <a href="/login" class="text-dark h3 text-decoration-none">Login</a> 
+        <a href="/" class="text-dark h3">Find Books and Beans</a>
+        <a href="/login" class="text-dark h3">Add a Book Club</a>
+        <a href="/login" class="text-dark h3">Add a Cafe</a>
+        <a href="/login" class="text-dark h3">Login</a> 
         {{/if}}
       </nav>
         
     </header>
     <main>
       {{{ body }}}
-      <div style="height: 550px">
-        
-        <a href="/signup" class="text-dark h3 text-decoration-underline text-nowrap">Not a member? Sign Up here!
-        <img src="/images/bookcoffee.jpg" class="w-75 h-100">
+      <div style="height: 550px">   
+        <a href="/signup" class="text-dark h4 text-decoration-underline text-nowrap">Not a member? Sign Up here!
+          <img src="/images/bookcoffee.jpg" class="w-75 h-100 rounded">
         </a>
-      </div>
-      
-
-      
+      </div>   
     </main>
-    </br>
-    <footer class="justify-content-center">
-     © 2022 by Babes in the Bookland
+    <footer class="text-dark h6 text-center mt-4">
+      Copyright © 2022 by Babes in the Bookland
     </footer>
   </div>
 
