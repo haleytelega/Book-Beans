@@ -44,6 +44,7 @@ Book.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
+
 BookComments.belongsTo(User, {
     foreignKey: 'user_id'
 });
