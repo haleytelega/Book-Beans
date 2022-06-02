@@ -6,6 +6,7 @@ body {
 
 nav a {
     text-decoration: none;
+    padding-bottom: 20px;
 }
 
 nav a:hover {
@@ -13,5 +14,10 @@ nav a:hover {
 }
 
 h6 {
-    padding-left: 150px;
+    padding-left: 120px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

@@ -1,16 +1,23 @@
-<h6>Coffee Shops</h6>
+<div class="container">
+  <div class="row">
+  <div class="col-md-5">
+<h6>Coffee Shop List</h6>
 <ol class="coffee-list">
   {{#each coffeePosts as |coffeePost|}}
-  <li>
+  <ol>
     {{> coffee-info coffeePost }}
-  </li>
+  </ol>
   {{/each}}
 </ol>
+</div>
 
-<h6>Book Clubs</h6>
+<div class="col-md-7">
+<h6>Book Club List</h6>
 <ol class="book-list">
   {{#each booksPosts as |bookPost|}}
-  <li>
+  <ol>
     {{> book-info bookPost }}
-  </li>
+  </ol>
   {{/each}}
+</div>
+</div>
