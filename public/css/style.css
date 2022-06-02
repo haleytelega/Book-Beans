@@ -6,8 +6,20 @@ body {
 
 nav a {
     text-decoration: none;
+    padding-bottom: 20px;
 }
 
 nav a:hover {
     text-decoration: underline;
+}
+
+h6 {
+    padding-left: 150px;
+}
+
+.text {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    pointer-events: none;   
 }

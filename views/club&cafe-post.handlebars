@@ -1,14 +1,23 @@
+<div class="container">
+  <div class="row">
+  <div class="col-sm-6">
+<h6>Coffee Shop List</h6>
 <ol class="coffee-list">
   {{#each coffeePosts as |coffeePost|}}
-  <li>
+  <ol>
     {{> coffee-info coffeePost }}
-  </li>
+  </ol>
   {{/each}}
 </ol>
+</div>
 
+<div class="col-sm-6">
+<h6>Book Club List</h6>
 <ol class="book-list">
   {{#each booksPosts as |bookPost|}}
-  <li>
+  <ol>
     {{> book-info bookPost }}
-  </li>
+  </ol>
   {{/each}}
+</div>
+</div>
