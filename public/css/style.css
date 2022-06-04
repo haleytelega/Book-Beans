@@ -6,7 +6,6 @@ body {
 
 nav a {
     text-decoration: none;
-    padding-bottom: 20px;
 }
 
 nav a:hover {
@@ -23,3 +22,13 @@ h6 {
     cursor: default;
     pointer-events: none;   
 }
+
+.list-bg {
+    background-color: #1a0d00;
+}
+
+li:hover {
+   
+    background-color:#090500 ;
+}
+

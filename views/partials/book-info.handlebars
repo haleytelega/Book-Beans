@@ -1,12 +1,12 @@
 
-<article class="bookPost border border-dark rounded w-50 p-3 text-center">
-<div class="book">
-    Book Club Name: <a class="text" href="{{bookClub_name}}"target="_blank">{{bookClub_name}}</a> </br>
-    City: <a class="text" href="{{city_name}}"target="_blank">{{city_name}}</a> </br>
-    Meeting Time: <a class="text" href="{{meeting_weekday}}"target="_blank">{{meeting_weekday}} at {{meeting_time}}</a>
+<article>
+<div class="">
+    <h3>{{bookClub_name}}</h3>
+   <p>City:<span class="fw-bold"> {{city_name}} </span></p>
+   <p> Meeting Time:<span class="fw-bold"> {{meeting_weekday}} at {{meeting_time}} </span></p>
 </div>
-<div class="book-meta">
-    by {{user.username}} on {{format_date created_at}}
+<div class="">
+    <p>Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
     {{!-- |
     <a href="/post/{{id}}">{{comment.length}} {{format_plural "comment" comment.length</a> --}}
 </div> 
