@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { CoffeeComments, Coffee, User } = require('../../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth.js');
 
 router.get('/', (req, res) => {
     CoffeeComments.findAll({
