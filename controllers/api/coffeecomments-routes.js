@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { CoffeeComments, Coffee, User } = require('../../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     CoffeeComments.findAll({
@@ -21,7 +22,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     CoffeeComments.create({
         comment_text: req.body.comment_text,
         coffee_id: req.body.coffee_id,
@@ -34,7 +35,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     CoffeeComments.destroy({
     where: {
         id: req.params.id
