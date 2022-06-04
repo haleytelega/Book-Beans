@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
         .then(dbBookData => {
             const booksPosts = dbBookData.map(bookPost => bookPost.get({ plain: true }));
             const allPosts = {coffeePosts, booksPosts};
-            console.log(allPosts);
+            // console.log(allPosts);
             res.render('homepage', {
                 coffeePosts,
                 booksPosts
