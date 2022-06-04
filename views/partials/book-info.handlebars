@@ -1,9 +1,9 @@
 
-<article class="bookPost border border-dark rounded w-50 p-3 text-center">
+<article class="bookPost border border-dark rounded w-100 p-3 text-center">
 <div class="book">
-    Book Club Name: <a href="{{bookClub_name}}"target="_blank">{{bookClub_name}}</a> </br>
-    City: <a href="{{city_name}}"target="_blank">{{city_name}}</a> </br>
-    Meeting Time: <a href="{{meeting_weekday}}"target="_blank">{{meeting_weekday}} at {{meeting_time}}</a>
+    <span class="input-group-text">Book Club Name</span><a href="{{bookClub_name}}"target="_blank">{{bookClub_name}}</a> </br>
+    <span class="input-group-text">City</span><a href="{{city_name}}"target="_blank">{{city_name}}</a> </br>
+    <span class="input-group-text">Meeting Time</span><a href="{{meeting_weekday}}"target="_blank">{{meeting_weekday}} at {{meeting_time}}</a>
 </div>
 <div class="book-meta">
     by {{user.username}} on {{format_date created_at}}
