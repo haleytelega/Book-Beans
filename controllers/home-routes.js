@@ -33,8 +33,8 @@ router.get('/', (req, res) => {
         .then(dbBookData => {
             const booksPosts = dbBookData.map(bookPost => bookPost.get({ plain: true }));
             const allPosts = {coffeePosts, booksPosts};
-            console.log(allPosts);
-            res.render('club&cafe-post', {
+            // console.log(allPosts);
+            res.render('homepage', {
                 coffeePosts,
                 booksPosts
                 // loggedIn: req.session.loggedIn

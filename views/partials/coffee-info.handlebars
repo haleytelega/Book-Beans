@@ -1,11 +1,7 @@
-<article class="coffeePost border border-dark rounded w-50 p-3 text-center">
-<div class="coffee">
-    Name: <a class="text" href="{{cafe_name}}" target="_blank">{{cafe_name}}</a> </br>
-    City: <a class="text" href="{{city_name}}" target="_blank">{{city_name}}</a>
-</div>
-<div class="coffee-meta">
-    by {{user.username}} on {{format_date created_at}}
-    {{!-- |
-    <a href="/post/{{id}}"></a>{{comments.length}} {{format_plural "comment" comments.length}}</a> --}}
-</div> 
+<article>
+    <div class="">
+        <h3> {{cafe_name}} </h3> 
+        <p>City:<span class="fw-bold"> {{city_name}}</span> </p>
+        <p> Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
+    </div>
 </article>
