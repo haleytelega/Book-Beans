@@ -36,8 +36,8 @@ router.get('/', (req, res) => {
             // console.log(allPosts);
             res.render('homepage', {
                 coffeePosts,
-                booksPosts
-                // loggedIn: req.session.loggedIn
+                booksPosts,
+                loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {
