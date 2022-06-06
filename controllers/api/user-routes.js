@@ -3,18 +3,22 @@ const { User, CoffeeComments, BookComments } = require('../../models');
 
 router.get('/', (req, res) => {
     User.findAll({
-        attributes: ['id', 'email', 'username', 'city_name'],
-        include: [{
-            model: CoffeeComments,
-            attributes: ['comment_text']
-        }]
+        attributes:  { exclude: ['password'] }
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+      req.session.save(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+          req.session.loggedIn = true;
+
+          res.json(dbUserData);
+      });
+  })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
-})
+});
 
 router.post('/', (req, res) => {
     User.create({
@@ -45,10 +49,10 @@ router.post('/login', (req, res) => {
         email: req.body.email
       }
     }).then(dbUserData => {
-      if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that email address!' });
-        return;
-      }
+        if (!dbUserData) {
+          res.status(400).json({ message: 'No user with that email address!' });
+          return;
+        }
   
     const validPassword = dbUserData.checkPassword(req.body.password);
     //const validPassword = 'user1'

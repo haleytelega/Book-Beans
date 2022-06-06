@@ -1,58 +1,69 @@
+<div class="container">
+    <div class="row">
 
-<div class="d-flex justify-content-center p-2 m-5" id="login">
-    <form class="border border-3 border-light rounded p-4 shadow-lg">
-        <h3 class="mb-3">Sign in!</h3>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" id="email-login" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+        <div class=" col 9 my-5 p-2">   
+            <img src="/images/bookcoffee.jpg" class=" rounded">     
+        </div> 
         
-        <div class="input-group mb-3">
-            <span class="input-group-text">Password</span>
-            <input type="text" class="form-control" id="password-login" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        
-        <div>
-            <button class="btn btn-secondary" type="submit" value="Submit">Submit</button>
-        </div>
+        <div class="col 3">
 
-    </form>
-</div>
+            <div class="p-2 my-5" id="login">
+                <form class="border border-3 border-light rounded p-4 shadow-lg">
+                    <h3 class="mb-3">Sign in!</h3>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Email</span>
+                        <input type="text" class="form-control" id="email-login" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Password</span>
+                        <input type="text" class="form-control" id="password-login" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    
+                    <div>
+                        <button class="btn btn-secondary" type="submit" value="Submit">Submit</button>
+                    </div>
 
-<div class="d-flex justify-content-center p-2 m-5" id="sign-up">
-    <form class="signup-form border border-3 border-light rounded p-4 shadow-lg">
-        <h3 class="mb-3">Sign up!</h3>
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="username-signup">Username</label>
-            <input type="text" id="username-signup" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+                </form>
+            </div>
 
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="city-signup" id="inputGroup-sizing-default">City</label>
-            <select class="form-select " id="city-signup">
-                <option selected> Choose your city</option>
-                <option value="Ottawa">Ottawa</option>
-                <option value="Toronto">Toronto</option>
-                <option value="Windsor">Windsor</option>
-                <option value="Waterloo">Waterloo</option>
-            </select>
-        </div>
+            <div class="p-2 my-5" id="sign-up">
+                <form class="signup-form border border-3 border-light rounded p-4 shadow-lg">
+                    <h3 class="mb-3">Sign up!</h3>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="username-signup">Username</label>
+                        <input type="text" id="username-signup" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
 
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="email-signup">Email</label>
-            <input type="text" id="email-signup" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="city-signup" id="inputGroup-sizing-default">City</label>
+                        <select class="form-select " id="city-signup">
+                            <option selected> Choose your city</option>
+                            <option value="Ottawa">Ottawa</option>
+                            <option value="Toronto">Toronto</option>
+                            <option value="Windsor">Windsor</option>
+                            <option value="Waterloo">Waterloo</option>
+                        </select>
+                    </div>
 
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="password-signup">Password</label>
-            <input type="text" id="password-signup" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        
-        <div>
-            <input class="btn btn-secondary" type="submit" value="Submit">
-        </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="email-signup">Email</label>
+                        <input type="text" id="email-signup" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
 
-    </form>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="password-signup">Password</label>
+                        <input type="text" id="password-signup" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    
+                    <div>
+                        <input class="btn btn-secondary" type="submit" value="Submit">
+                    </div>
+
+                </form>
+            </div>
+        </div>  
+    </div>   
 </div>
 
 <script src="/javascript/login.js"></script>

@@ -18,7 +18,10 @@
   "homepage": "https://github.com/haleytelega/Book-Beans#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+<<<<<<< HEAD
     "bcryptjs": "^2.4.3",
+=======
+>>>>>>> 4a7d92f6abc23ffbc53e95d324a6b77e7bc72f18
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -26,8 +29,7 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
-    "sequelize": "^6.20.1",
-    "y": "^0.3.2"
+    "sequelize": "^6.20.1"
   },
   "keywords": [],
   "description": ""
