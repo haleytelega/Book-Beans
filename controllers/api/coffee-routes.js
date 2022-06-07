@@ -71,26 +71,6 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
-    Coffee.update(req.body, {
-        individualHooks: true,
-        where: {
-            id: req.params.id
-        }
-    })
-    .then(dbCoffeeData => {
-        if (!dbCoffeeData[0]) {
-        res.status(404).json({ message: 'No Coffee Shop found with this id' });
-        return;
-    }
-        res.json(dbCoffeeData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
 router.delete('/:id', (req, res) => {
     // delete on tag by its `id` value
     Coffee.destroy({

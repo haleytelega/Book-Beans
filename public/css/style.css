@@ -27,7 +27,34 @@ h6 {
     background-color: #1a0d00;
 }
 
-li:hover {
 
-    background-color:#090500 ;
+.addCoffee {
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.cafeName {
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.0;
+    margin-bottom: 20px;
+}
+
+.cafeAdress {
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 2.0;
+}
+
+.coffeeList {
+    margin-bottom: 30px;
+}
+
+button {
+    margin-left: 100px;
+}
+
+.button {
+    margin-top: 20px;
 }
