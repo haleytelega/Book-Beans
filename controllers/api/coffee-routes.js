@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
     Coffee.create({
         cafe_name: req.body.cafe_name,
         city_name: req.body.city_name,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbCoffeeData => res.json(dbCoffeeData))
     .catch(err => {

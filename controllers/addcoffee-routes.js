@@ -2,14 +2,15 @@ const router = require('express').Router();
 const { Coffee, CoffeeComments, User } = require('../models');
 
 router.get('/', (req, res) => {
+    console.log(req.session);
     Coffee.findAll({
         where: {
             user_id: req.session.user_id
         },
-        attributes: ['id', 'cafe_name', 'city_name', 'user_id'],
+        attributes: ['id', 'cafe_name', 'city_name', 'user_id', 'created_at'],
         include: [{
             model: CoffeeComments,
-            attributes: ['comment_text'],
+            attributes: ['id', 'comment_text'],
             include: {
                 model: User,
                 attributes: ['username']
@@ -22,8 +23,9 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbCoffeeData => {
-        const coffeePosts = dbCoffeeData.map(coffeePost => coffeePost.get({ plain: true }));
-        res.render('add-coffeeshop', { coffeePosts, loggedIn: true });
+        const shops = dbCoffeeData.map(coffeeShop => coffeeShop.get({ plain: true }));
+        console.log("coffee" + shops);
+        res.render('add-coffeeshop', { shops, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
         console.log(err);

@@ -17,10 +17,10 @@
 <section>
     <h2>Your Added Coffee Shop</h2>
     <ol>
-        {{#each coffeePosts as |coffeePost|}}
+        {{#each shops as |coffeeShop|}}
         <li>
-        {{> coffee-info coffeePost}}
-        <a href="/coffeeshops/edit/{{coffeePost.id}}" class="edit-link">Edit Coffee Shop</a>
+        {{> coffee-info coffeeShop}}
+        <a href="/coffeeshops/edit/{{coffeeShop.id}}" class="edit-link">Edit Coffee Shop</a>
         </li>
         {{/each}}
     </ol>
