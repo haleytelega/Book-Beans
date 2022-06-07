@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        attributes: ['id', 'cafe_name', 'city_name'],
+        attributes: ['id', 'cafe_name', 'city_name', 'user_id'],
         include: [{
             model: CoffeeComments,
             attributes: ['comment_text'],
@@ -22,8 +22,8 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbCoffeeData => {
-        const coffee = dbCoffeeData.map(coffeeShop => coffeeShop.get({ plain: true }));
-        res.render('add-coffeeshop', { coffee, loggedIn: true });
+        const coffeePosts = dbCoffeeData.map(coffeePost => coffeePost.get({ plain: true }));
+        res.render('add-coffeeshop', { coffeePosts, loggedIn: true });
     })
     .catch(err => {
         console.log(err);

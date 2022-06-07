@@ -14,18 +14,16 @@
     </form>
 </section>
 
-{{#if coffee.length}}
 <section>
     <h2>Your Added Coffee Shop</h2>
     <ol>
-        {{#each coffee as |coffeeShop|}}
+        {{#each coffeePosts as |coffeePost|}}
         <li>
-        {{> coffee-info coffeeShop}}
-        <a href="/coffeeshops/edit/{{coffeeShop.id}}" class="edit-link">Edit Coffee Shop</a>
+        {{> coffee-info coffeePost}}
+        <a href="/coffeeshops/edit/{{coffeePost.id}}" class="edit-link">Edit Coffee Shop</a>
         </li>
         {{/each}}
     </ol>
 </section>
-{{/if}}
 
 <script src="/javascript/add-cafe.js"></script>
