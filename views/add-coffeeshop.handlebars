@@ -20,10 +20,11 @@
         {{#each shops as |coffeeShop|}}
         <li>
         {{> coffee-info coffeeShop}}
-        <a href="/coffeeshops/edit/{{coffeeShop.id}}" class="edit-link">Edit Coffee Shop</a>
+        <button type="button" class="delete-post-btn">Delete post</button>
         </li>
         {{/each}}
     </ol>
 </section>
 
+<script src="/javascript/delete-cafe.js"></script>
 <script src="/javascript/add-cafe.js"></script>

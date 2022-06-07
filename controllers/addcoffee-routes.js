@@ -24,7 +24,6 @@ router.get('/', (req, res) => {
     })
     .then(dbCoffeeData => {
         const shops = dbCoffeeData.map(coffeeShop => coffeeShop.get({ plain: true }));
-        console.log("coffee" + shops);
         res.render('add-coffeeshop', { shops, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
