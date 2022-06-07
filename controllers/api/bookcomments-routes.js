@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     BookComments.findAll({
-    attributes: ['id', 'comment_text'],
+    attributes: ['id', 'book_text'],
         include: [{
             model: Book,
             attributes: ['bookClub_name']
@@ -27,7 +27,7 @@ router.post('/', withAuth, (req, res) => {
     BookComments.create({
         book_text: req.body.book_text,
         book_id: req.body.book_id,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {

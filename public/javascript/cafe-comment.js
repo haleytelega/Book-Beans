@@ -7,7 +7,7 @@ async function commentFormHandlerCafe(event) {
     ];
   
     if (comment_text) {
-      const response = await fetch('/api/cafecomments', {
+      const response = await fetch('/api/coffeeComments', {
         method: 'POST',
         body: JSON.stringify({
           coffee_id,
@@ -20,7 +20,7 @@ async function commentFormHandlerCafe(event) {
   
       if (response.ok) {
         // document.location.reload();
-        document.location.replace('/dashboard');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
