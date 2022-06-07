@@ -1,5 +1,8 @@
-<section>
-    <h2>Add Coffee Shop</h2>
+<div class="container">
+<div class="row justify-content-between">
+<div class="col-5">
+<section>   
+    <h2 class="addCoffee">Add Coffee Shop</h2>
 
     <form class="new-coffee-form">
         <div>
@@ -12,19 +15,23 @@
         </div>
     <button type="submit" class="btn">Create</button>
     </form>
+    </div>
 </section>
 
+<div class="col-5">
 <section>
-    <h2>Your Added Coffee Shop</h2>
+    <h2 class="addCoffee">Your Added Coffee Shop</h2>
     <ol>
         {{#each shops as |coffeeShop|}}
-        <li>
+        <li class="coffeeList">
         {{> coffee-info coffeeShop}}
         <button type="button" class="delete-post-btn">Delete post</button>
         </li>
         {{/each}}
     </ol>
 </section>
+</div>
+</div>
 
 <script src="/javascript/delete-cafe.js"></script>
 <script src="/javascript/add-cafe.js"></script>

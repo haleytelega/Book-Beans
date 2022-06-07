@@ -31,3 +31,12 @@ li:hover {
 
     background-color:#090500 ;
 }
+
+.addCoffee {
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+.coffeeList {
+    margin-left: 50px;
+}
