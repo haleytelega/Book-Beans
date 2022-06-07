@@ -1,0 +1,19 @@
+{{> book-info bookPost }}
+
+{{#if loggedIn}}
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">add comment</button>
+    </div>
+</form>
+{{/if}}
+
+{{> comments bookPost.bookComments}}
+
+{{#if loggedIn}}
+<script src="/javascript/club-comment.js"></script>
+{{/if}}

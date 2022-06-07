@@ -6,6 +6,7 @@
         <p> Meeting Time:<span class=" cafeName"> {{meeting_weekday}} at {{meeting_time}} </span></p>
     </div>
     <div class="">
-        <p>Posted by <span class="cafeName">{{user.username}}</span> on {{format_date created_at}} </p>
+        <p>Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
+        <a href="/book/{{id}}">{{bookComments.length}} {{format_plural "comment" bookComments.length}}</a>
     </div> 
 </article>

@@ -11,7 +11,7 @@ BookComments.init(
         primaryKey: true,
         autoIncrement: true
     },
-    book_text: {
+    comment_text: {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {

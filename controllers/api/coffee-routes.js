@@ -25,6 +25,39 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Coffee.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id','cafe_name', 'city_name', 'created_at'],
+        include: [{
+            model: CoffeeComments,
+            attributes: ['id', 'comment_text', 'coffee_id', 'user_id', 'created_at'],
+            include: {
+                model: User,
+                attributes: ['username']
+            }
+        },
+        {
+            model: User,
+            attributes: ['username']
+        }
+        ]
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No Coffee Shop found with this id' });
+            return;
+        }
+        res.json(dbPostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 router.post('/', (req, res) => {
     Coffee.create({
         cafe_name: req.body.cafe_name,
