@@ -29,29 +29,9 @@ router.post('/', (req, res) => {
     Coffee.create({
         cafe_name: req.body.cafe_name,
         city_name: req.body.city_name,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbCoffeeData => res.json(dbCoffeeData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
-router.put('/:id', (req, res) => {
-    Coffee.update(req.body, {
-        individualHooks: true,
-        where: {
-            id: req.params.id
-        }
-    })
-    .then(dbCoffeeData => {
-        if (!dbCoffeeData[0]) {
-        res.status(404).json({ message: 'No tag found with this id' });
-        return;
-    }
-        res.json(dbCoffeeData);
-    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
