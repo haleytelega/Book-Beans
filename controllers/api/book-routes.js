@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time'],
     include: [{
       model: BookComments,
-      attributes: ['book_text'],
+      attributes: ['comment_text'],
       include: {
         model: User,
         attributes: ['username']
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
       attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time', 'created_at'],
       include: [{
           model: BookComments,
-          attributes: ['id', 'book_text', 'book_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'book_id', 'user_id', 'created_at'],
           include: {
               model: User,
               attributes: ['username']

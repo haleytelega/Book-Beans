@@ -1,17 +1,17 @@
 async function commentFormHandlerClub(event) {
     event.preventDefault();
   
-    const book_text = document.querySelector('textarea[name="club-comment-body"]').value.trim();
+    const comment_text = document.querySelector('textarea[name="club-comment-body"]').value.trim();
     const book_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
   
-    if (book_text) {
+    if (comment_text) {
       const response = await fetch('/api/clubcomments', {
         method: 'POST',
         body: JSON.stringify({
           book_id,
-          book_text
+          comment_text
         }),
         headers: {
           'Content-Type': 'application/json'

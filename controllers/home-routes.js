@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
             include: [
             {
                 model: BookComments,
-                attributes: ['id', 'book_text']
+                attributes: ['id', 'comment_text']
             },
             {
                 model: User,
