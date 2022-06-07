@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id','city_name', 'created_at'],
+        attributes: ['id','cafe_name', 'city_name', 'created_at'],
         include: [{
             model: CoffeeComments,
             attributes: ['id', 'comment_text', 'coffee_id', 'user_id', 'created_at'],

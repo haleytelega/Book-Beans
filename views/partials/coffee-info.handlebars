@@ -3,6 +3,6 @@
         <h3> {{cafe_name}} </h3> 
         <p>City:<span class="fw-bold"> {{city_name}}</span> </p>
         <p> Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
-         <a href="api/coffee/{{id}}">{{coffeecomments.length}} {{format_plural "comment" coffeecomments.length}}</a>
+         <a href="/coffee/{{id}}">{{coffeecomments.length}} {{format_plural "comment" coffeecomments.length}}</a>
     </div>
 </article>

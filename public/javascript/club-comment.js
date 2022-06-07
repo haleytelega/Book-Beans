@@ -1,13 +1,13 @@
 async function commentFormHandlerClub(event) {
     event.preventDefault();
   
-    const comment_text = document.querySelector('textarea[name="club-comment-body"]').value.trim();
+    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
     const book_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
   
     if (comment_text) {
-      const response = await fetch('/api/clubcomments', {
+      const response = await fetch('/api/bookcomments', {
         method: 'POST',
         body: JSON.stringify({
           book_id,
@@ -19,12 +19,11 @@ async function commentFormHandlerClub(event) {
       });
   
       if (response.ok) {
-        // document.location.reload();
-        document.location.replace('/dashboard');
+        document.location.reload();
       } else {
         alert(response.statusText);
       }
     }
   }
   
-  document.querySelector('#comment-club-form').addEventListener('submit', commentFormHandlerClub);
+  document.querySelector('.comment-form').addEventListener('submit', commentFormHandlerClub);
