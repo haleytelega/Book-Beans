@@ -25,7 +25,7 @@
         {{#each shops as |coffeeShop|}}
         <li class="coffeeList">
         {{> coffee-info coffeeShop}}
-        <button type="button" class="delete-post-btn">Delete post</button>
+            <button type="button" class="delete-post-btn" name="delete-cafe" value={{coffeeShop.id}}>Delete post</button>
         </li>
         {{/each}}
     </ol>
