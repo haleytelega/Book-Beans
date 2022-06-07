@@ -31,6 +31,7 @@ h6 {
 .addCoffee {
     font-size: 25px;
     border-bottom: 1px solid black;
+    margin-bottom: 15px;
 }
 
 .cafeName {
@@ -52,5 +53,8 @@ h6 {
 
 button {
     margin-left: 100px;
-    margin-top: 10px;
+}
+
+.button {
+    margin-top: 20px;
 }
