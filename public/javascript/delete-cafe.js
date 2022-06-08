@@ -1,9 +1,8 @@
 async function deleteFormHandlerCafe(event) {
     event.preventDefault();
   
-    const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
+    const id = document.querySelector("button[name='delete-cafe']").value;
+    
     const response = await fetch(`/api/coffee/${id}`, {
       method: 'DELETE'
     });
