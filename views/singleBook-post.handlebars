@@ -1,18 +1,29 @@
-{{> book-info bookPost }}
+<div class="container">
+    <div class="row justify-content-start align-items-start">
+        <h2 class="my-4 p-2 fw-bolder fs-1">Coffee Shop</h2>
+        <div class="border border-3 border-light rounded shadow-lg col-7 p-3 list-bg text-white">
+            {{> book-info bookPost }}
+        </div>
 
-{{#if loggedIn}}
-<form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
+        {{#if loggedIn}}
+        <div class="border border-3 border-light rounded shadow-lg col-4 ms-4">
+            <form class="comment-form">
+                <div>
+                    <textarea name="comment-body"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">add comment</button>
+                </div>
+            </form>
+        </div>
+        {{/if}}
+
+        <div class="col-7 p-0">
+            {{> comments bookPost.bookComments}}
+        </div>
     </div>
-
-    <div>
-        <button type="submit">add comment</button>
-    </div>
-</form>
-{{/if}}
-
-{{> comments bookPost.bookComments}}
+</div>
 
 {{#if loggedIn}}
 <script src="/javascript/club-comment.js"></script>
