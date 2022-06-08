@@ -1,0 +1,37 @@
+<div class="container">
+<div class="row justify-content-between">
+<div class="col-5">
+<section>   
+    <h2 class="addCoffee">Add Book Club</h2>
+
+    <form class="new-club-form">
+        <div class="clubName">
+            <label for="club-name">Book Club Name:</label>
+            <input type="text" id="club-name" name="club-name" />
+        </div>
+        <div class="clubAddress">
+            <label for="city-name">Book Club City:</label>
+            <input id="city-name" name="city-name" />
+        </div>
+    <button type="submit" class="button">Create</button>
+    </form>
+    </div>
+</section>
+
+<div class="col-5">
+<section>
+    <h2 class="addClub">Your Added Book Club</h2>
+    <ol>
+        {{#each clubs as |bookClub|}}
+        <li class="clubList">
+        {{> book-info bookClub}}
+        <button type="button" class="delete-post-btn">Delete post</button>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+</div>
+</div>
+
+<script src="/javascript/delete-club.js"></script>
+<script src="/javascript/add-club.js"></script>

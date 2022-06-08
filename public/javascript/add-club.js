@@ -20,7 +20,7 @@ async function newFormHandlerClub(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/bookclubs');
     } else {
       alert(response.statusText);
     }
