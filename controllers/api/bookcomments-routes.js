@@ -25,9 +25,9 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
     BookComments.create({
-        book_text: req.body.book_text,
+        comment_text: req.body.comment_text,
         book_id: req.body.book_id,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {

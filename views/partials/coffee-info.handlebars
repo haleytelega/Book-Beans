@@ -2,6 +2,11 @@
     <div class="">
         <h3> {{cafe_name}} </h3> 
         <p>City:<span class="fw-bold"> {{city_name}}</span> </p>
-        <p> Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
+        <p class="mb-0"> Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} 
+        
+        </p>   
+    </div>
+    <div class="text-end fs-5 fw-bold">
+        <a href="/coffee/{{id}}">{{coffeecomments.length}} {{format_plural "Comment" coffeecomments.length}}</a>
     </div>
 </article>

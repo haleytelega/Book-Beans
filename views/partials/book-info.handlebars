@@ -1,11 +1,14 @@
 
 <article>
-    <div class="">
+    <div >
         <h3>{{bookClub_name}}</h3>
         <p>City:<span class="fw-bold"> {{city_name}} </span></p>
         <p> Meeting Time:<span class="fw-bold"> {{meeting_weekday}} at {{meeting_time}} </span></p>
     </div>
-    <div class="">
-        <p>Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
+    <div>
+        <p class="mb-0">Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>  
     </div> 
+    <div class="text-end fs-5 fw-bold">
+    <a href="/book/{{id}}">{{bookComments.length}} {{format_plural "Comment" bookComments.length}}</a>
+    </div>
 </article>

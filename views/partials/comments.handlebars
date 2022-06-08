@@ -1,12 +1,22 @@
-<div class="comments">
-{{#each this}}
-<section class="comment">
-    <div class="meta">
-        {{user.username}} on {{format_date created_at}}
-    </div>
-    <div class="text">
-        {{comment_text}}
-    </div>
-</section>
-{{/each}}
-</div>
+
+
+
+<h3 class="my-3 p-2 fs-1 fw-bolder">Comments</h3>
+    <ul class="list-group border border-3 border-light rounded shadow-lg">
+        {{#each this}}
+        <li class="list-group-item list-bg text-white border-white">
+            <div class="p-2 my-1 fs-5 text-start">
+            {{comment_text}}
+            </div>
+            <div class="p-2 mt-2 text-end">
+            <p class="mb-0 fw-light">Posted by <span class="fw-bold">{{user.username}}</span> on {{format_date created_at}} </p>
+            </div>
+        </li>
+        {{/each}} 
+    </ul>
+   
+
+
+
+
+        

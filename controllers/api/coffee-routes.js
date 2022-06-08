@@ -25,33 +25,46 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-    Coffee.create({
-        cafe_name: req.body.cafe_name,
-        city_name: req.body.city_name,
-        user_id: req.body.user_id
+router.get('/:id', (req, res) => {
+    Coffee.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id','cafe_name', 'city_name', 'created_at'],
+        include: [{
+            model: CoffeeComments,
+            attributes: ['id', 'comment_text', 'coffee_id', 'user_id', 'created_at'],
+            include: {
+                model: User,
+                attributes: ['username']
+            }
+        },
+        {
+            model: User,
+            attributes: ['username']
+        }
+        ]
     })
-    .then(dbCoffeeData => res.json(dbCoffeeData))
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No Coffee Shop found with this id' });
+            return;
+        }
+        res.json(dbPostData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
 
-router.put('/:id', (req, res) => {
-    Coffee.update(req.body, {
-        individualHooks: true,
-        where: {
-            id: req.params.id
-        }
+router.post('/', (req, res) => {
+    Coffee.create({
+        cafe_name: req.body.cafe_name,
+        city_name: req.body.city_name,
+        user_id: req.session.user_id
     })
-    .then(dbCoffeeData => {
-        if (!dbCoffeeData[0]) {
-        res.status(404).json({ message: 'No tag found with this id' });
-        return;
-    }
-        res.json(dbCoffeeData);
-    })
+    .then(dbCoffeeData => res.json(dbCoffeeData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);

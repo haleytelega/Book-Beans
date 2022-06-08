@@ -1,13 +1,13 @@
 async function commentFormHandlerCafe(event) {
     event.preventDefault();
   
-    const comment_text = document.querySelector('textarea[name="cafe-comment-body"]').value.trim();
+    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
     const coffee_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
   
     if (comment_text) {
-      const response = await fetch('/api/cafecomments', {
+      const response = await fetch('/api/coffeecomments', {
         method: 'POST',
         body: JSON.stringify({
           coffee_id,
@@ -19,12 +19,11 @@ async function commentFormHandlerCafe(event) {
       });
   
       if (response.ok) {
-        // document.location.reload();
-        document.location.replace('/dashboard');
+          document.location.reload();
       } else {
         alert(response.statusText);
       }
     }
   }
   
-  document.querySelector('#comment-cafe-form').addEventListener('submit', commentFormHandlerCafe);
+  document.querySelector('.comment-form').addEventListener('submit', commentFormHandlerCafe);
