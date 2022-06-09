@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbBookData => {
-        const shops = dbBookData.map(bookClub=> bookClub.get({ plain: true }));
+        const clubs = dbBookData.map(bookClub=> bookClub.get({ plain: true }));
         res.render('add-bookclub', { clubs, loggedIn: req.session.loggedIn });
     })
     .catch(err => {

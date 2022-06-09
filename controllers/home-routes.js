@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
     })
     .then(dbCoffeeData => {
         const coffeePosts = dbCoffeeData.map(coffeePost => coffeePost.get({ plain: true }));
-        Book.findAll({
+        
+    Book.findAll({
             attributes: ['id', 'bookClub_name', 'city_name', 'meeting_weekday', 'meeting_time', 'user_id', 'created_at'],
             include: [
             {
