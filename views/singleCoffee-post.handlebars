@@ -1,30 +1,23 @@
 
-
-
-
 <div class="container">
-    <div class="row justify-content-start align-items-start">
+    <div class="row justify-content-between">
         <h2 class="my-4 p-2 fw-bolder fs-1">Coffee Shop</h2>
-        <div class="border border-3 border-light rounded shadow-lg col-7 p-3 list-bg text-white">
+        <div class="border border-3 border-light rounded shadow-lg col-6 p-3 list-bg text-white">
             {{> coffee-info coffeePost }}
         </div>
 
         {{#if loggedIn}}
-        <div class="border border-3 border-light rounded shadow-lg col-4 ms-4">
-
+        <div class="p-4 border border-3 border-light rounded shadow-lg col-5">
             <form class="comment-form">
-                <div>
-                    <textarea name="comment-body"></textarea>
+                <div class="input-group">
+                    <textarea placeholder="Coffee Shop Comment!" class="form-control" rows="3" aria-label="With textarea" name="comment-body"></textarea>   
                 </div>
-
-                <div>
-                    <button type="submit">add comment</button>  
-                </div>
+                <button class="btn btn-secondary btn-lg mt-3 ms-0" type="submit">Add Comment</button>
             </form>
         </div>
         {{/if}}
 
-        <div class="col-7 p-0">
+        <div class="col-6 p-0">
             {{> comments coffeePost.coffeecomments}}
         </div>
     </div>
@@ -33,4 +26,5 @@
 
 {{#if loggedIn}}
 <script src="/javascript/cafe-comment.js"></script>
+<script src="/javascript/logout.js"></script>
 {{/if}}
