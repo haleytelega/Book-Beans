@@ -39,5 +39,5 @@
 
   # Questions
   If you have any questions, please contact me at [email](mailto:).
-  My GitHub username is *elsartz* and ...
-  my GitHub profile is [profile](https://github.com/elsartz)
+  My GitHub username is haleytelega and ...
+  my GitHub profile is [profile](https://github.com/haleytelega)
