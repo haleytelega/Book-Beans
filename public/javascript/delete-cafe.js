@@ -1,7 +1,8 @@
-async function deleteFormHandlerCafe(event) {
+
+async function deleteFormHandlerCafe(event, id) {
     event.preventDefault();
   
-    const id = document.querySelector("button[name='delete-cafe']").value;
+    // const id = document.querySelector("button[name='delete-cafe']").value;
     
     const response = await fetch(`/api/coffee/${id}`, {
       method: 'DELETE'
@@ -14,4 +15,11 @@ async function deleteFormHandlerCafe(event) {
     }
   }
   
-  document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandlerCafe);
+  const deleteButtons = [...document.querySelectorAll('.delete-post-btn')]
+  deleteButtons.forEach(function(el){
+    const value = el.value;
+    console.log(value);
+    el.addEventListener('click', (e)=>{
+      deleteFormHandlerCafe(e, value)
+    })
+  });
