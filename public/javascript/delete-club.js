@@ -1,18 +1,23 @@
 async function deleteFormHandlerClub(event) {
     event.preventDefault();
   
-    const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
-    const response = await fetch(`/api/bookclubs/${id}`, {
+  
+    const response = await fetch(`/api/book/${id}`, {
       method: 'DELETE'
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard/');
+      document.location.replace('/bookclubs');
     } else {
       alert(response.statusText);
     }
   }
   
-  document.querySelector('.delete-bookclub-btn').addEventListener('click', deleteFormHandlerClub);
+  const deleteButtons = [...document.querySelectorAll('.delete-post-btn')]
+  deleteButtons.forEach(function(el){
+    const value = el.value;
+    console.log(value);
+    el.addEventListener('click', (e)=>{
+      deleteFormHandlerClub(e, value)
+    })
+  });

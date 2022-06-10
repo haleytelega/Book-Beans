@@ -13,6 +13,14 @@
             <label for="city-name">Book Club City:</label>
             <input id="city-name" name="city-name" />
         </div>
+        <div class="meetingWeekday">
+            <label for="meeting-weekday">What Day Do You Meet:</label>
+            <input type="text" id="meeting-weekday" name="meeting-weekday" />
+        </div>
+        <div class="meetingTime">
+            <label for="meeting-time">What Time Do You Meet:</label>
+            <input id="meeting-time" name="meeting-time" />
+        </div>
     <button type="submit" class="button">Create</button>
     </form>
     </div>
@@ -33,9 +41,7 @@
 </div>
 </div>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+
 
 <script src="/javascript/delete-club.js"></script>
 <script src="/javascript/add-club.js"></script>

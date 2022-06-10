@@ -58,26 +58,6 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {
-  Book.update(req.body, {
-      individualHooks: true,
-      where: {
-          id: req.params.id
-      }
-  })
-  .then(dbBookData => {
-      if (!dbBookData[0]) {
-      res.status(404).json({ message: 'No Bookclub found with this id' });
-      return;
-  }
-      res.json(dbBookData);
-  })
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  });
-});
-
 router.post('/', (req, res) => {
   Book.create({
     bookClub_name: req.body.bookClub_name,
@@ -93,7 +73,6 @@ router.post('/', (req, res) => {
     });
   }
 );
-
 
 router.delete('/:id', (req, res) => {
   Book.destroy({

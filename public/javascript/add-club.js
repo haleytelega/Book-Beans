@@ -2,11 +2,11 @@ async function newFormHandlerClub(event) {
     event.preventDefault();
   
     const bookClub_name = document.querySelector('input[name="club-name"]').value;
-    const city_name = document.querySelector('input[name="club-city-name"]').value;
-    const meeting_weekday = document.querySelector('input[name="club-meeting-weekday"]').value;
-    const meeting_time = document.querySelector('input[name="club-meeting-time"]').value;
+    const city_name = document.querySelector('input[name="city-name"]').value;
+    const meeting_weekday = document.querySelector('input[name="meeting-weekday"]').value;
+    const meeting_time = document.querySelector('input[name="meeting-time"]').value;
   
-    const response = await fetch(`/api/bookclubs`, {
+    const response = await fetch(`/api/book`, {
       method: 'POST',
       body: JSON.stringify({
         bookClub_name,
@@ -26,4 +26,4 @@ async function newFormHandlerClub(event) {
     }
   }
   
-  document.querySelector('#new-club-form').addEventListener('submit', newFormHandlerClub);
+  document.querySelector('.new-club-form').addEventListener('submit', newFormHandlerClub);
