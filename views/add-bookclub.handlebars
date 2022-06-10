@@ -33,7 +33,7 @@
         {{#each clubs as |bookClub|}}
         <li class="clubList">
         {{> book-info bookClub}}
-        <button type="button" class="delete-post-btn">Delete post</button>
+        <button type="button" class="delete-post-btn" name="delete-club" value={{bookClub.id}}>Delete post</button>
         </li>
         {{/each}}
     </ol>

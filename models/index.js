@@ -46,19 +46,23 @@ Book.belongsTo(User, {
 });
 
 BookComments.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 BookComments.belongsTo(Book, {
-    foreignKey: 'book_id'
+    foreignKey: 'book_id',
+    onDelete: 'CASCADE'
 });
 
 User.hasMany(BookComments, { 
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 Book.hasMany(BookComments, {
-    foreignKey: 'book_id'
+    foreignKey: 'book_id',
+    onDelete: 'CASCADE'
 });
 
 module.exports = { Coffee, CoffeeComments, Book, BookComments, User };

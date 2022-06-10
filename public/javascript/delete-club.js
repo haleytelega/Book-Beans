@@ -1,7 +1,7 @@
-async function deleteFormHandlerClub(event) {
+async function deleteFormHandlerClub(event, id) {
     event.preventDefault();
   
-  
+    
     const response = await fetch(`/api/book/${id}`, {
       method: 'DELETE'
     });
