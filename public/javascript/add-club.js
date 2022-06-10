@@ -2,8 +2,8 @@ async function newFormHandlerClub(event) {
     event.preventDefault();
   
     const bookClub_name = document.querySelector('input[name="club-name"]').value;
-    const city_name = document.querySelector('input[name="city-name"]').value;
-    const meeting_weekday = document.querySelector('input[name="meeting-weekday"]').value;
+    const city_name = document.querySelector('select[name="city-name"]').value;
+    const meeting_weekday = document.querySelector('select[name="meeting-weekday"]').value;
     const meeting_time = document.querySelector('input[name="meeting-time"]').value;
   
     const response = await fetch(`/api/book`, {

@@ -2,7 +2,7 @@ async function newFormHandlerCafe(event) {
     event.preventDefault();
   
     const cafe_name = document.querySelector('input[name="cafe-name"]').value;
-    const city_name = document.querySelector('input[name="city-name"]').value;
+    const city_name = document.querySelector('select[name="city-name"]').value;
   
     const response = await fetch(`/api/coffee`, {
       method: 'POST',

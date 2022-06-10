@@ -5,17 +5,33 @@
     <h2 class="addCoffee">Add Book Club</h2>
 
     <form class="new-club-form">
-        <div class="clubName">
+        <div class="clubName mb-3">
             <label for="club-name">Book Club Name:</label>
-            <input type="text" id="club-name" name="club-name" />
+            <input type="text" id="club-name" name="club-name"/>
         </div>
-        <div class="clubAddress">
+        <div class="clubAddress mb-3">
             <label for="city-name">Book Club City:</label>
-            <input id="city-name" name="city-name" />
+            <select class="p-1" name="city-name">
+                <option selected> Choose your city</option>
+                <option value="Ottawa">Ottawa</option>
+                <option value="Toronto">Toronto</option>
+                <option value="Windsor">Windsor</option>
+                <option value="Waterloo">Waterloo</option>
+            </select>
         </div>
-        <div class="meetingWeekday">
+        <div class="meetingWeekday mb-3">
             <label for="meeting-weekday">What Day Do You Meet:</label>
-            <input type="text" id="meeting-weekday" name="meeting-weekday" />
+            <select class="p-1" id="meeting-weekday" name="meeting-weekday">
+                <option selected> Choose your Weekday</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select>
+            
         </div>
         <div class="meetingTime">
             <label for="meeting-time">What Time Do You Meet:</label>
@@ -45,3 +61,6 @@
 
 <script src="/javascript/delete-club.js"></script>
 <script src="/javascript/add-club.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}

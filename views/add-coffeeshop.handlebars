@@ -5,13 +5,19 @@
     <h2 class="addCoffee">Add Coffee Shop</h2>
 
     <form class="new-coffee-form">
-        <div class="cafeName">
+        <div class="cafeName mb-3">
             <label for="cafe-name">Coffee Shop Name:</label>
             <input type="text" id="cafe-name" name="cafe-name" />
         </div>
-        <div class="cafeAddress">
+        <div class="cafeAddress mb-3">
             <label for="city-name">Coffee Shop City:</label>
-            <input id="city-name" name="city-name" />
+            <select class="p-1" name="city-name">
+                <option selected> Choose your city</option>
+                <option value="Ottawa">Ottawa</option>
+                <option value="Toronto">Toronto</option>
+                <option value="Windsor">Windsor</option>
+                <option value="Waterloo">Waterloo</option>
+            </select>
         </div>
     <button type="submit" class="button">Create</button>
     </form>
@@ -35,3 +41,6 @@
 
 <script src="/javascript/delete-cafe.js"></script>
 <script src="/javascript/add-cafe.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
