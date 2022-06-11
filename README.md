@@ -15,7 +15,7 @@
 
   # Installation
      A Javascript application which make use several modules from the npm site and deployed with Heroku.
-   Of course if you want to see the results you can follow this [[link]()](https://book-and-beans.herokuapp.com/) where is the live version of the app.
+   Of course if you want to see the results you can follow this [link](https://book-and-beans.herokuapp.com/) where is the live version of the app.
    In case you want to reproduce and make some changes, I recommend to use the Node.js with the below packages:
    - ```express``` to make a server
    - ```mysql2``` for the database
@@ -36,6 +36,10 @@
 
   # Tests
     Screenshots:
+   ![Homepage](https://github.com/haleytelega/Book-Beans/blob/main/img/homepage.jpeg)
+   ![Signup](https://github.com/haleytelega/Book-Beans/blob/main/img/signuppage.jpeg)
+   ![Mycafe](https://github.com/haleytelega/Book-Beans/blob/main/img/mycoffeeshop.jpeg)
+   ![MyBookClub](https://github.com/haleytelega/Book-Beans/blob/main/img/mybookclub.jpeg)
 
   # Questions
   If you have any questions, please contact me at [email](mailto:).
